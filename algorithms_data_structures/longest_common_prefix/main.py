@@ -1,14 +1,19 @@
+"""_summary_
+
+    Returns:
+        _type_: _description_
+    """
 import unittest
 
 
-def longest_common_prefix(string_list:list[str])->str:
+def longest_common_prefix(string_list: list[str]) -> str:
     """ xzy """
     if not string_list:
         return ""
-    if len(string_list) == 0:
+    if len(string_list) == 1:
         return string_list[0]
-    
-    def compare_two_string(str1:str, str2:str)->str:
+
+    def compare_two_string(str1: str, str2: str) -> str:
         """ Compares two strings, returns a substring that's common between str1 and str2"""
         temp_lcp = []
         shortest_str = str1 if len(str1) < len(str2) else str2
@@ -17,7 +22,6 @@ def longest_common_prefix(string_list:list[str])->str:
                 break
             temp_lcp.append(str1[index])
         return "".join(temp_lcp)
-    
     idx1 = 0
     lcp_found = ""
     str1 = string_list[idx1]
@@ -27,13 +31,16 @@ def longest_common_prefix(string_list:list[str])->str:
         lcp_found = compare_two_string(string_list[idx], lcp_found)
     return lcp_found
 
-mystrs = ["lower", "flowers", "flow", "floridian", "floridians", "flood", "flu"]
+
+my_strings = ["lower", "flowers", "flow",
+              "floridian", "floridians", "flood", "flu"]
 
 # TESTING....
 class TestLongestCommonPrefix(unittest.TestCase):
 
     def test_basic_functionality(self):
-        self.assertEqual(longest_common_prefix(["flower", "flow", "flight"]), "fl")
+        self.assertEqual(longest_common_prefix(
+            ["flower", "flow", "flight"]), "fl")
         self.assertEqual(longest_common_prefix(["dog", "racecar", "car"]), "")
 
     def test_empty_list(self):
@@ -47,7 +54,9 @@ class TestLongestCommonPrefix(unittest.TestCase):
 
     def test_varied_length_strings(self):
         self.assertEqual(longest_common_prefix(["a", "ab", "abc"]), "a")
-        self.assertEqual(longest_common_prefix(["longest", "longer", "long"]), "long")
+        self.assertEqual(longest_common_prefix(
+            ["longest", "longer", "long"]), "long")
+
 
 if __name__ == '__main__':
     unittest.main()
