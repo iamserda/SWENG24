@@ -1,15 +1,11 @@
-    """_summary_
-
-    Returns:
-        _type_: _description_
-    """
+"""Module to run unit tests for code."""
 import unittest
 
 def longest_common_prefix(string_list: list[str]) -> str:
     """ xzy """
     if not string_list:
         return ""
-    if len(string_list) == 0:
+    if len(string_list) == 1:
         return string_list[0]
 
     def compare_two_string(str1: str, str2: str) -> str:
