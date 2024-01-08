@@ -1,16 +1,15 @@
-"""_summary_
+    """_summary_
 
     Returns:
         _type_: _description_
     """
 import unittest
 
-
 def longest_common_prefix(string_list: list[str]) -> str:
     """ xzy """
     if not string_list:
         return ""
-    if len(string_list) == 1:
+    if len(string_list) == 0:
         return string_list[0]
 
     def compare_two_string(str1: str, str2: str) -> str:
@@ -32,10 +31,12 @@ def longest_common_prefix(string_list: list[str]) -> str:
     return lcp_found
 
 
-my_strings = ["lower", "flowers", "flow",
-              "floridian", "floridians", "flood", "flu"]
+mystrs = ["lower", "flowers", "flow",
+          "floridian", "floridians", "flood", "flu"]
 
 # TESTING....
+
+
 class TestLongestCommonPrefix(unittest.TestCase):
 
     def test_basic_functionality(self):
