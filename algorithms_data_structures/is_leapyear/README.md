@@ -21,7 +21,7 @@ Implement the `is_leap_year` function.
 4. `is_leap_year(1900)` should return `False`
 5. `is_leap_year(2012)` should return `True`
 
-**Expected Assertions:**
+**Expected Assertions: copy the following to the bottom of your code to run these test...**
 
 ```python
 assert is_leap_year(2004) == True
@@ -31,4 +31,8 @@ assert is_leap_year(1900) == False
 assert is_leap_year(2012) == True
 ```
 
-Ensure your function passes all the test cases!
+**Final TestCases:**
+
+```bash
+python3 algorithms_data_structures/is_leap_year/test.py
+```
