@@ -1,6 +1,19 @@
 import unittest
 
 
+"""WRITE YOUR SOLUTION BELOW"""
+
+
+def longest_common_prefix(string_list: list[str]) -> str:
+    """
+        :type strs: List[str]
+        :rtype: str
+        """
+
+
+"""TESTS ARENA:"""
+
+
 class TestLongestCommonPrefix(unittest.TestCase):
 
     def test_basic_functionality(self):
