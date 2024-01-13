@@ -105,3 +105,29 @@ def create_user_profile():
         password = input("Enter your password: ")
     scapital_clients[username] = {'user': username, 'pwd': password}
     return username, password
+
+
+def start_app(start=False):
+    if start:
+        print("Welcome to Simus Capital Premium Cards Service!")
+        username = get_user_info()
+        user_data = scapital_clients[username]
+        fname = user_data["first"]
+        greeting = f"Hi {fname}!"
+        print(greeting)
+        print()
+        print("Accessing credit history...")
+        card_issued = issue_card(user_data['credit_score'])
+        print(card_issued)
+        if card_issued is None:
+            print("Please provide your local contact phone number,\nand a member of our client concierge will reach out to you\nwithin 60 minutes.")
+            contact_number = input()
+            scapital_clients[username]["phone"] = contact_number if len(
+                contact_number) == 10 else "".join("555-555-5555".split("-"))
+        scapital_clients[username]["card1"] = card_issued
+        print("Congratulations and welcome to the Simus Capital family!")
+        print(f"Your new card is {scapital_clients[username]['card1']}")
+
+
+if __name__ == "__main__":
+    start_app(start=True)
