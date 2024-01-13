@@ -53,3 +53,21 @@ def master_factory():
     group_id2 = random.randint(1111, 9999)
     customer_id = random.randint(1111, 9999)
     return f"{issuer_id}-{group_id1}-{group_id2}-{customer_id}"
+
+
+def issue_card(user_credit):
+    if user_credit < 300 or user_credit > 850:
+        print("One of our Client Concierge will be with your shorty!")
+        return None
+
+    if user_credit >= 720:
+        print("Excellent, we can offer you the Deluxe AMEX card. Processing....")
+        return select_card("amex")
+
+    if user_credit >= 690:
+        print("Excellent, we can offer you our Premium VISA card. Processing....")
+        return select_card("visa")
+
+    if user_credit >= 630:
+        print("Excellent, we can offer you own of our Premium MASTERCard. Processing....")
+        return select_card("master")
