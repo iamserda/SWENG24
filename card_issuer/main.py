@@ -71,3 +71,37 @@ def issue_card(user_credit):
     if user_credit >= 630:
         print("Excellent, we can offer you own of our Premium MASTERCard. Processing....")
         return select_card("master")
+
+
+def get_user_info(new_user=True):
+    if new_user:
+        print(f"System Time: {datetime.datetime.now()}")
+        fname = input("Enter your first name: ")
+        lname = input("Enter your last name: ")
+        username, pwd = create_user_profile()
+        m, d, y = input("Enter DOB: MM-DD-YYYY: ").split("-")
+        dob = datetime.datetime(year=int(y), month=int(m), day=int(d))
+        credit_score = int(input("Enter your FICO score: "))
+
+    scapital_clients[username]["first"] = fname
+    scapital_clients[username]["last"] = lname
+    scapital_clients[username]["dob"] = dob
+    scapital_clients[username]["password"] = pwd
+    scapital_clients[username]["credit_score"] = credit_score
+
+    return username
+
+
+def create_user_profile():
+    ""
+    username = input("Enter your username: ")
+    while username in scapital_clients.keys():
+        print("This username already exist, please try again")
+        username = input("Enter your username: ")
+
+    pwd_constraints = "Passwords must be: 8 characters long and alphanumeric."
+    password = input(pwd_constraints+"\nEnter your password: ")
+    while not password or len(password) <= 8 or not str(password).isalnum():
+        password = input("Enter your password: ")
+    scapital_clients[username] = {'user': username, 'pwd': password}
+    return username, password
