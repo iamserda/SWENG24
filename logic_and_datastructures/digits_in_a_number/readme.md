@@ -1,6 +1,8 @@
 # Digit in a number
 
 ### Description:
+Given some integer x, print each digit within the integer.
+constraint: you cannot convert the integer to any other data types.
 
 ### Examples:
 
