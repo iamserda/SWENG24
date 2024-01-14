@@ -7,15 +7,12 @@ master_issued_set = set()
 
 def select_card(pmt_servicer: str) -> str:
     if not pmt_servicer or pmt_servicer not in ['amex', 'visa', 'master']:
-        raise ValueError(
-            "Card Payment Servicer was not provided. Info logged. Application   will terminate now.")
-    servicers_tools = {
-        "amex": (amex_factory, amex_issued_set),
-        "visa": (visa_factory, visa_issued_set),
-        "master": (master_factory, master_issued_set)
-    }
-
-    return generate_card(pmt_servicer, servicers_tools[pmt_servicer][0], servicers_tools[pmt_servicer][1])
+        error_message = "Card Payment Servicer was not provided. Info logged. Application   will terminate now."
+        raise ValueError(error_message)
+    servicers = get_servicers()
+    card_generator = servicers[pmt_servicer]["function"]
+    issued_cards_set = servicers[pmt_servicer]["issue"]
+    return generate_card(pmt_servicer, card_generator, issued_cards_set)
 
 
 def generate_card(svc, card_genrator, verifier):
@@ -72,6 +69,13 @@ def issue_card(user_credit):
         print("Excellent, we can offer you own of our Premium MASTERCard. Processing....")
         return select_card("master")
 
+
+def get_servicers():
+    return {
+        "amex": {"function": amex_factory, "issued": amex_issued_set},
+        "visa": {"function": visa_factory, "issued": visa_issued_set},
+        "master": {"function": master_factory, "issued": master_issued_set}
+    }
 
 def get_user_info(new_user=True):
     if new_user:
