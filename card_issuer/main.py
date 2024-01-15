@@ -1,4 +1,5 @@
 import datetime
+
 scapital_clients = {}
 amex_issued_set = set()
 visa_issued_set = set()
@@ -6,26 +7,27 @@ master_issued_set = set()
 
 
 def select_card(pmt_servicer: str) -> str:
-    if not pmt_servicer or pmt_servicer not in ['amex', 'visa', 'master']:
+    if not pmt_servicer or pmt_servicer not in ["amex", "visa", "master"]:
         error_message = "Card Payment Servicer was not provided. Info logged. Application   will terminate now."
         raise ValueError(error_message)
     servicers = get_servicers()
     card_generator = servicers[pmt_servicer]["function"]
-    issued_cards_set = servicers[pmt_servicer]["issue"]
+    issued_cards_set = servicers[pmt_servicer]["issued"]
     return generate_card(pmt_servicer, card_generator, issued_cards_set)
 
 
-def generate_card(svc, card_genrator, verifier):
+def generate_card(svc, card_generator, verifier):
     """generates a new card based on servicer:str, card_generator:def, verifier:set"""
-    new_card = card_genrator()
+    new_card = card_generator()
     while new_card in verifier:
-        new_card = card_genrator()
+        new_card = card_generator()
     return new_card
 
 
 def amex_factory():
     """generates a fake amex card"""
     import random
+
     amex_id = random.randint(32000, 85000)
     group_nums = random.randint(312123, 985430)
     customer_nums = random.randint(32000, 85000)
@@ -35,6 +37,7 @@ def amex_factory():
 def visa_factory():
     """generates a fake visa card"""
     import random
+
     visa_id = random.randint(4100, 4999)
     bank_id = random.randint(1111, 9000)
     group_id = random.randint(1110, 9900)
@@ -43,8 +46,9 @@ def visa_factory():
 
 
 def master_factory():
-    """ a fake master card generator"""
+    """a fake master card generator"""
     import random
+
     issuer_id = random.randint(5100, 5999)
     group_id1 = random.randint(1111, 9999)
     group_id2 = random.randint(1111, 9999)
@@ -66,7 +70,9 @@ def issue_card(user_credit):
         return select_card("visa")
 
     if user_credit >= 630:
-        print("Excellent, we can offer you own of our Premium MASTERCard. Processing....")
+        print(
+            "Excellent, we can offer you own of our Premium MASTERCard. Processing...."
+        )
         return select_card("master")
 
 
@@ -74,8 +80,9 @@ def get_servicers():
     return {
         "amex": {"function": amex_factory, "issued": amex_issued_set},
         "visa": {"function": visa_factory, "issued": visa_issued_set},
-        "master": {"function": master_factory, "issued": master_issued_set}
+        "master": {"function": master_factory, "issued": master_issued_set},
     }
+
 
 def get_user_info(new_user=True):
     if new_user:
@@ -97,17 +104,17 @@ def get_user_info(new_user=True):
 
 
 def create_user_profile():
-    ""
+    """"""
     username = input("Enter your username: ")
     while username in scapital_clients.keys():
         print("This username already exist, please try again")
         username = input("Enter your username: ")
 
     pwd_constraints = "Passwords must be: 8 characters long and alphanumeric."
-    password = input(pwd_constraints+"\nEnter your password: ")
+    password = input(pwd_constraints + "\nEnter your password: ")
     while not password or len(password) <= 8 or not str(password).isalnum():
         password = input("Enter your password: ")
-    scapital_clients[username] = {'user': username, 'pwd': password}
+    scapital_clients[username] = {"user": username, "pwd": password}
     return username, password
 
 
@@ -121,17 +128,22 @@ def start_app(start=False):
         print(greeting)
         print()
         print("Accessing credit history...")
-        card_issued = issue_card(user_data['credit_score'])
-        print(card_issued)
+        card_issued = issue_card(user_data["credit_score"])
+        # print(card_issued)s
         if card_issued is None:
-            print("Please provide your local contact phone number,\nand a member of our client concierge will reach out to you\nwithin 60 minutes.")
+            print(
+                "Please provide your local contact phone number,\nand a member of our client concierge will reach out to you\nwithin 60 minutes."
+            )
             contact_number = input()
-            scapital_clients[username]["phone"] = contact_number if len(
-                contact_number) == 10 else "".join("555-555-5555".split("-"))
+            scapital_clients[username]["phone"] = (
+                contact_number
+                if len(contact_number) == 10
+                else "".join("555-555-5555".split("-"))
+            )
         scapital_clients[username]["card1"] = card_issued
-        print("Congratulations and welcome to the Simus Capital family!")
-        print(f"Your new card is {scapital_clients[username]['card1']}")
-
+        print("Congratulations!")
+        print("Welcome to the Simus Capital card-holders family!")
+        print(f"Your new car number is {scapital_clients[username]['card1']}")
 
 if __name__ == "__main__":
     start_app(start=True)
