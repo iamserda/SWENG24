@@ -10,6 +10,9 @@ def digit_in_number(num: int) -> None:
 
 
 # TESTS ARENAS:
+result = digit_in_number(10000)
+print(result)
+
 result = digit_in_number("10000")
 print(result)
 
