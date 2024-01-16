@@ -1,4 +1,4 @@
-# Leap Year Checker
+# LONGEST COMMON PREFIX
 
 **Description:**
 Create a function named `is_leap_year(year)` that takes an integer `year` as input and returns `True` if the given year is a leap year, and `False` otherwise.

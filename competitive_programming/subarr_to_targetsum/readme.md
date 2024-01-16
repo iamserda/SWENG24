@@ -1,14 +1,7 @@
-# Leap Year Checker
+# Sub-Array that adds up to a Target Sum
 
 **Description:**
-Create a function named `is_leap_year(year)` that takes an integer `year` as input and returns `True` if the given year is a leap year, and `False` otherwise.
 
-A leap year is defined as follows:
-
-- It is divisible by 4.
-- If it is a century year (ends with 00), it must also be divisible by 400.
-
-For example, 2000 and 2004 are leap years, but 1900 and 2003 are not.
 
 **Your Task:**
 Implement the `is_leap_year` function.

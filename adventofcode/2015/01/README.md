@@ -1,34 +1,46 @@
-# Leap Year Checker
+# [Day 1: Not Quite Lisp](https://adventofcode.com/2015/day/1)
 
-**Description:**
-Create a function named `is_leap_year(year)` that takes an integer `year` as input and returns `True` if the given year is a leap year, and `False` otherwise.
+## PART 1 - Description
+Santa was hoping for a white Christmas, but his weather machine's "snow" function is powered by stars, and he's fresh out! To save Christmas, he needs you to collect fifty stars by December 25th.
 
-A leap year is defined as follows:
+Collect stars by helping Santa solve puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants one star. Good luck!
 
-- It is divisible by 4.
-- If it is a century year (ends with 00), it must also be divisible by 400.
+Here's an easy puzzle to warm you up.
 
-For example, 2000 and 2004 are leap years, but 1900 and 2003 are not.
+Santa is trying to deliver presents in a large apartment building, but he can't find the right floor - the directions he got are a little confusing. He starts on the ground floor (floor 0) and then follows the instructions one character at a time.
+
+An opening parenthesis, (, means he should go up one floor, and a closing parenthesis, ), means he should go down one floor.
+
+The apartment building is very tall, and the basement is very deep; he will never find the top or bottom floors.
+
+For example:
+
+`(()) and ()() both result in floor 0.`
+`((( and (()(()( both result in floor 3.`
+`))((((( also results in floor 3.`
+`()) and ))( both result in floor -1 (the first basement level).`
+`))) and )())()) both result in floor -3.`
+
+
+## PART 2 - Description
+Now, given the same instructions, find the position of the first character that causes him to enter the basement (floor -1). The first character in the instructions has position 1, the second character has position 2, and so on.
+For example:
+
+`) causes him to enter the basement at character position 1.` 
+`()()) causes him to enter the basement at character position 5.` 
+
 
 **Your Task:**
-Implement the `is_leap_year` function.
+Implement the `which_floor` function to solve the following:
+PART 1: `To what floor do the instructions take Santa?`
+PART 2: `What is the position of the character that causes Santa to first enter the basement?`
 
 **Test Cases:**
-
-1. `is_leap_year(2004)` should return `True`
-2. `is_leap_year(2005)` should return `False`
-3. `is_leap_year(2000)` should return `True`
-4. `is_leap_year(1900)` should return `False`
-5. `is_leap_year(2012)` should return `True`
-
+built-in, just run your code under main.
 **Expected Assertions:**
 
 ```python
-assert is_leap_year(2004) == True
-assert is_leap_year(2005) == False
-assert is_leap_year(2000) == True
-assert is_leap_year(1900) == False
-assert is_leap_year(2012) == True
+
 ```
 
 Ensure your function passes all the test cases!
