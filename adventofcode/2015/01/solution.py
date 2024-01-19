@@ -1,15 +1,16 @@
+"""importing unittest module"""
 import unittest
 
 
 def which_floor(str_input):
     """
     READ INSTRUCTIONS HERE -> https://adventofcode.com/2015/day/1
-    
+
     Given a string, based on this formula: '(' as +1 and ')' as -1
     this function calculates and returns the current floor number. """
     if not isinstance(str_input, str):
         raise TypeError(
-            f"Error: Expected input to be of type 'str', received {type(str_input)}.\nTry again. Terminating...")
+            f"Error: Expected input to be of type 'str', received{type(str_input)}.\nTry again. Terminating...")
     floor = 0
     alerted_flag = False
     for index, char in enumerate(str_input):
@@ -29,7 +30,10 @@ santa_string = "()()(()()()(()()((()((()))((()((((()()((((()))()((((())(((((((()
 
 
 class TestWhichFloor(unittest.TestCase):
+    """Testing the which_floor function"""
+
     def testing_which_floor(self):
+        """Testing the which_floor function"""
         test_input = "(())"
         self.assertEqual(which_floor(test_input), 0)
         test_input = "()()"
