@@ -1,4 +1,6 @@
+"""importing datetime module"""
 import datetime
+import random
 
 scapital_clients = {}
 amex_issued_set = set()
@@ -7,6 +9,7 @@ master_issued_set = set()
 
 
 def select_card(pmt_servicer: str) -> str:
+    """selects card for customer"""
     if not pmt_servicer or pmt_servicer not in ["amex", "visa", "master"]:
         error_message = "Card Payment Servicer was not provided. Info logged. Application   will terminate now."
         raise ValueError(error_message)
@@ -26,8 +29,6 @@ def generate_card(svc, card_generator, verifier):
 
 def amex_factory():
     """generates a fake amex card"""
-    import random
-
     amex_id = random.randint(32000, 85000)
     group_nums = random.randint(312123, 985430)
     customer_nums = random.randint(32000, 85000)
@@ -36,8 +37,6 @@ def amex_factory():
 
 def visa_factory():
     """generates a fake visa card"""
-    import random
-
     visa_id = random.randint(4100, 4999)
     bank_id = random.randint(1111, 9000)
     group_id = random.randint(1110, 9900)
@@ -47,7 +46,6 @@ def visa_factory():
 
 def master_factory():
     """a fake master card generator"""
-    import random
 
     issuer_id = random.randint(5100, 5999)
     group_id1 = random.randint(1111, 9999)
@@ -57,6 +55,7 @@ def master_factory():
 
 
 def issue_card(user_credit):
+    """issue card based on credit"""
     if user_credit < 300 or user_credit > 850:
         print("One of our Client Concierge will be with your shorty!")
         return None
@@ -77,6 +76,7 @@ def issue_card(user_credit):
 
 
 def get_servicers():
+    """returns an object of card servicers available at the firm"""
     return {
         "amex": {"function": amex_factory, "issued": amex_issued_set},
         "visa": {"function": visa_factory, "issued": visa_issued_set},
@@ -85,6 +85,7 @@ def get_servicers():
 
 
 def get_user_info(new_user=True):
+    """prompt user for information to create account"""
     if new_user:
         print(f"System Time: {datetime.datetime.now()}")
         fname = input("Enter your first name: ")
@@ -104,8 +105,9 @@ def get_user_info(new_user=True):
 
 
 def create_user_profile():
-    """"""
+    """creates user profile"""
     username = input("Enter your username: ")
+
     while username in scapital_clients.keys():
         print("This username already exist, please try again")
         username = input("Enter your username: ")
