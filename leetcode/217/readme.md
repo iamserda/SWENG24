@@ -28,6 +28,8 @@ Output: `true`
 
 ## Social Media
 
-GH: [@iamserda](https://github.com/iamserda)
-X:  [@iamserda](https://twitter.com/iamserda)
-LI: [@iamserda](https://linkedin.com/iamserda)
+github: [@iamserda](https://github.com/iamserda)
+
+twitter/x:  [@iamserda](https://twitter.com/iamserda)
+
+linkedin: [@iamserda](https://linkedin.com/iamserda)s
