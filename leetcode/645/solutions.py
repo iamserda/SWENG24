@@ -21,3 +21,5 @@ nums = [1, 2, 2, 4]
 assert find_error_nums(nums) == [2, 3]
 nums = [1, 1]
 assert find_error_nums(nums) == [1, 2]
+
+
