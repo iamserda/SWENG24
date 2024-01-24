@@ -9,6 +9,8 @@ def merge(nums1, m, nums2, n):
     nums1_indexer = m - 1
     nums2_indexer = n - 1
     next_indexer = m + n - 1
+    if n - 1 < 0:
+        return
 
     while next_indexer >= 0:
         if nums1[nums1_indexer] >= nums2[nums2_indexer]:
