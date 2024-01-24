@@ -1,11 +1,11 @@
-<h1 style="width: 80%; margin: 0.5rem auto; border: none;"><marquee>Problem Name</marquee></h1>
+# Problem or Project Title
 
-### Description:
+### Description
 
-### Examples:
+### Examples
 
-### constraints:
+### constraints
 
-### Credits, Source, Etc...
+### Credits, Source, Etc
 
-<p style="width: 50%; margin: 1rem auto 1rem; font-weight: bold; "><marquee >Made with <span style="font-size: 24px;">🫶🏿</span> in NYC by [@iamserda](https://www.twitter.com/iamserda)</marque></p>
+<p style="width: 50%; margin: 1rem auto 1rem; font-weight: bold; "><marquee >Made with <span style="font-size: 24px;">🫶🏿</span> in NYC by <a href="https://www.twitter.com/iamserda">@iamserda</a></marque></p>
