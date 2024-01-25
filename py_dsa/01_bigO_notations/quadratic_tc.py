@@ -1,12 +1,25 @@
 ## WRITE THE PRINT_ITEMS FUNCTION HERE ##
-def quadratic_time(n):
-    """showing an example of linear-time complexity"""
-    count = 0
-    for idx in range(n):
-        for jdx in range(n):
-            count += 1
-            print(f"Count: {idx}{}")
+def quadratic_time(search_list, search_item):
+    """showing an example of quadratic-time complexity"""
+    print("Searching for:", search_item)
+    print("List:", search_list)
+    start = 0
+    end = len(search_list) - 1
+    while start < end:
+        mid = (end + start) // 2
+        print(mid)
+        if search_list[mid] == search_item:
+            return mid
+        if search_item > search_list[mid]:
+            start = mid + 1
+            continue
+        end = mid - 1
+        print(start, mid, end)
+    return -1
 
 
 # DO NOT CHANGE THIS LINE:
-quadratic_time(n=10)
+n = list(range(0, 101, 5))
+print(quadratic_time(n, 80))
+print(quadratic_time(n, 180))
+print(quadratic_time(n, -1))
