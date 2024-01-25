@@ -1,4 +1,5 @@
 def greet_user(usr_name):
+    """Given a string, user's name, prints the user's name"""
     if not isinstance(usr_name, str):
         raise TypeError(
             f"Expected data of type string. Receive {type(usr_name)}")
