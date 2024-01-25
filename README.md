@@ -5,9 +5,10 @@
 - **Introduction to Programming with Python**
 - [Python for Beginners](https://www.youtube.com/playlist?list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6) by Microsoft Developer's YouTube Channel
 - [Python Fundamentals](https://www.udemy.com/course/python3-fundamentals/) by [Dr. Fred Baptiste](https://www.udemy.com/user/fredbaptiste/) [**PAID**]
-- [Advent of Code [2023]](https://adventofcode.com/2023)
+- Challenges at [Advent of Code [2023]](https://adventofcode.com/2023)
+- Challenges at [LeetCode](https://www.leetcode.com/problemset)
 
-## **EXTRA RESOURCES (Some Paid, Some Free):**S
+## EXTRA RESOURCES (Some Paid, Some Free)
 
 - [Advent of Code [2015]](https://adventofcode.com/2015)
 - [Advent of Code [2016]](https://adventofcode.com/2016)
@@ -35,4 +36,10 @@
 <br>
 <br>
 
-**Made with 🤍 by [@iamserda](https://www.twitter.com/iamserda) in N🗽C**
+gh: [@iamserda](https://github.com/iamserda)
+
+tw: [@iamserda](https://twitter.com/iamserda)
+
+in: [@iamserda](https://linkedin.com/in/iamserda)
+
+Made with 🤍 in N🗽C.
