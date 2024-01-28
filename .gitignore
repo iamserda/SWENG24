@@ -5,3 +5,8 @@
 */.DS_Store
 *.vscode
 */SWENG24.code-workspace
+-template
+-template/*
+.trunk
+.vscode
+*/-template
