@@ -25,10 +25,10 @@ def merge(nums1, m, nums2, n):
 
 
 # Testing:
-nums1 = [1]
-nums2 = []
+nums1 = [0]
+nums2 = [1]
 M = 1
-N = 0
+N = 1
 print(f"Before: {nums1}")
 merge(nums1=nums1, m=M, nums2=nums2, n=N)
 print(f"After: {nums1}")
