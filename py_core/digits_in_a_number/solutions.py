@@ -1,21 +1,19 @@
 """
-Given some integer x, print each digit within the integer.
-constraint: you cannot convert the integer to any other data types.
+Given some integer x, return a list of each of its digits.
 """
 
-def digit_in_number(num: int) -> None:
-    """Prints each digit within the given integer 'num' arg."""
+
+def digit_in_number(num: int) -> list[int]:
+    """Given some integer x, return a list of each of its digits."""
+    result = []
     if isinstance(num, int):
-        result = []
-        while num >= 0:
+        while num > 0:
             result.append(num % 10)
             num = num // 10
         result.reverse()
         return result
     # RAINY DAY
-    raise TypeError(
-        f"Error: Expected argument of type 'int'. Received type: {type(num)}")
+    return []
 
 
-numbers = digit_in_number(1)
-print(numbers)
+assert digit_in_number(12345) == [1, 2, 3, 4, 5]
