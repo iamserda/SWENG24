@@ -1,13 +1,13 @@
 """Given a number, returns the number of digits in num"""
 
 
-def count_digits(num):
+def count_digits(num: int) -> int:
     """Given a number, returns the number of digits in num"""
-    arr = []
+    count = 0
     while abs(num) > 0:
-        arr.append(abs(num) % 10)
         num = int(num / 10)
-    return len(arr)
+        count += 1
+    return count
 
 
 # TESTS ARENA:

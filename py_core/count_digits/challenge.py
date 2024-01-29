@@ -1,7 +1,7 @@
 """Given a number, returns the number of digits in num"""
 
 
-def count_digits(num):
+def count_digits(num: int) -> int:
     """Given a number, returns the number of digits in num"""
     # start here:
 
