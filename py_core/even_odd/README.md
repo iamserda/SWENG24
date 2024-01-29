@@ -1,34 +1,31 @@
-# Leap Year Checker
+# Even or Odd
 
-**Description:**
-Create a function named `is_leap_year(year)` that takes an integer `year` as input and returns `True` if the given year is a leap year, and `False` otherwise.
+## Description
 
-A leap year is defined as follows:
+Given an integer, return True if is an even number, else false. 
 
-- It is divisible by 4.
-- If it is a century year (ends with 00), it must also be divisible by 400.
+A number is deemed an "even" number if it is equally divisible by 2,
+meaning when divided by 2 with a remainder is 0. 
 
-For example, 2000 and 2004 are leap years, but 1900 and 2003 are not.
+Example 4 is an even number because when `4` is divided by `2` we get 0 as remainder.
 
-**Your Task:**
-Implement the `is_leap_year` function.
+However 5 is not even because  `5` is divided by `2` 1 as a remainder.
 
-**Test Cases:**
-
-1. `is_leap_year(2004)` should return `True`
-2. `is_leap_year(2005)` should return `False`
-3. `is_leap_year(2000)` should return `True`
-4. `is_leap_year(1900)` should return `False`
-5. `is_leap_year(2012)` should return `True`
-
-**Expected Assertions:**
+### Tests
 
 ```python
-assert is_leap_year(2004) == True
-assert is_leap_year(2005) == False
-assert is_leap_year(2000) == True
-assert is_leap_year(1900) == False
-assert is_leap_year(2012) == True
+assert is_even(-5) is False
+assert is_even(4) is True
+assert is_odd(-4) is False
+assert is_odd(5) is True
 ```
 
-Ensure your function passes all the test cases!
+### Credits, Source and more
+
+<p style="width: 75%; margin: 1rem auto; "><marquee ><span style="font-size: 12px;"></span> </marque></p>
+
+[gh: [@iamserda](https://github.com/iamserda),
+tw: [@iamserda](https://twitter.com/iamserda),
+in: [@iamserda](https://linkedin.com/in/iamserda)]
+
+Made with 🤍🫶🏿 in N🗽C by [@iamserda](https://www.twitter.com/iamserda)
