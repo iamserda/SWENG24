@@ -1,6 +1,7 @@
 # Leap Year Checker
 
-**Description:**
+## Description
+
 Create a function named `is_leap_year(year)` that takes an integer `year` as input and returns `True` if the given year is a leap year, and `False` otherwise.
 
 A leap year is defined as follows:
@@ -13,7 +14,7 @@ For example, 2000 and 2004 are leap years, but 1900 and 2003 are not.
 **Your Task:**
 Implement the `is_leap_year` function.
 
-**Test Cases:**
+### Test Cases
 
 1. `is_leap_year(2004)` should return `True`
 2. `is_leap_year(2005)` should return `False`
@@ -33,6 +34,15 @@ assert is_leap_year(2012) == True
 
 **Final TestCases:**
 
-```bash
-python3 algorithms_data_structures/is_leap_year/test.py
-```
+`python3 test.py` #posix
+`python test.py` #nt
+
+### Credits, Source and more
+
+<p style="width: 75%; margin: 1rem auto; "><marquee ><span style="font-size: 12px;"></span> </marque></p>
+
+[gh: [@iamserda](https://github.com/iamserda),
+tw: [@iamserda](https://twitter.com/iamserda),
+in: [@iamserda](https://linkedin.com/in/iamserda)]
+
+Made with 🤍🫶🏿 in N🗽C by [@iamserda](https://www.twitter.com/iamserda)

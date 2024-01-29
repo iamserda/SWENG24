@@ -1,34 +1,17 @@
-# Leap Year Checker
+# Python(Core) Fundamentals
 
-**Description:**
-Create a function named `is_leap_year(year)` that takes an integer `year` as input and returns `True` if the given year is a leap year, and `False` otherwise.
+## Description
 
-A leap year is defined as follows:
+### Examples
 
-- It is divisible by 4.
-- If it is a century year (ends with 00), it must also be divisible by 400.
+### Test Cases
 
-For example, 2000 and 2004 are leap years, but 1900 and 2003 are not.
+### Credits, Source and more
 
-**Your Task:**
-Implement the `is_leap_year` function.
+<p style="width: 75%; margin: 1rem auto 1rem; font-weight: bold; "><marquee ><span style="font-size: 24px;"></span> </marque></p>
 
-**Test Cases:**
+[gh: [@iamserda](https://github.com/iamserda),
+tw: [@iamserda](https://twitter.com/iamserda),
+in: [@iamserda](https://linkedin.com/in/iamserda)]
 
-1. `is_leap_year(2004)` should return `True`
-2. `is_leap_year(2005)` should return `False`
-3. `is_leap_year(2000)` should return `True`
-4. `is_leap_year(1900)` should return `False`
-5. `is_leap_year(2012)` should return `True`
-
-**Expected Assertions:**
-
-```python
-assert is_leap_year(2004) == True
-assert is_leap_year(2005) == False
-assert is_leap_year(2000) == True
-assert is_leap_year(1900) == False
-assert is_leap_year(2012) == True
-```
-
-Ensure your function passes all the test cases!
+Made with 🤍🫶🏿 in N🗽C by [@iamserda](https://www.twitter.com/iamserda)

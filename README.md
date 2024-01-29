@@ -33,13 +33,10 @@
 - DevOps: Prod Engineering
 - System Design: LLD, HLD, and more...
 
-<br>
-<br>
+<p style="width: 75%; margin: 1rem auto 1rem; font-weight: bold; "><marquee ><span style="font-size: 24px;"></span> </marque></p>
 
-gh: [@iamserda](https://github.com/iamserda)
+[gh: [@iamserda](https://github.com/iamserda),
+tw: [@iamserda](https://twitter.com/iamserda),
+in: [@iamserda](https://linkedin.com/in/iamserda)]
 
-tw: [@iamserda](https://twitter.com/iamserda)
-
-in: [@iamserda](https://linkedin.com/in/iamserda)
-
-Made with 🤍 in N🗽C.
+Made with 🤍🫶🏿 in N🗽C by [@iamserda](https://www.twitter.com/iamserda)
