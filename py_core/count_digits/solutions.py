@@ -10,6 +10,8 @@ def count_digits(num):
     return len(arr)
 
 
+# TESTS ARENA:
+# DO NOT MAKE ANY CHANGE TO THE CODE BELOW...
 assert count_digits(-12345) == 5
 assert count_digits(1234) == 4
 assert count_digits(-45) == 2
