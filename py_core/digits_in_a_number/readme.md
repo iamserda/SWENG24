@@ -8,6 +8,12 @@ constraint: you cannot convert the integer to any other data types.
 
 ### constraints:
 
-### Credits, Source, Etc...
+### Credits, Source and more
 
-<p style="width: 50%; margin: 1rem auto 1rem; font-weight: bold; "><marquee >Made with <span style="font-size: 24px;">🫶🏿</span> in NYC by [@iamserda](https://www.twitter.com/iamserda)</marque></p>
+<p style="width: 75%; margin: 1rem auto; "><marquee ><span style="font-size: 12px;"></span> </marque></p>
+
+[gh: [@iamserda](https://github.com/iamserda),
+tw: [@iamserda](https://twitter.com/iamserda),
+in: [@iamserda](https://linkedin.com/in/iamserda)]
+
+Made with 🤍🫶🏿 in N🗽C by [@iamserda](https://www.twitter.com/iamserda)
