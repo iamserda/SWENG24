@@ -59,7 +59,7 @@ class LinkedList:
         temp_ptr = None  # clear temp_ptr
         return self.head
 
-    def print_list_nodes(self):
+    def print_all_nodes(self):
         """Prints all the node"""
         if not self.head:
             return
@@ -71,10 +71,10 @@ class LinkedList:
 
 # Tests Arena
 myLL = LinkedList(12)
-myLL.print_list_nodes()
+myLL.print_all_nodes()
 myLL.append(13)
-myLL.print_list_nodes()
+myLL.print_all_nodes()
 myLL.prepend(10)
-myLL.print_list_nodes()
+myLL.print_all_nodes()
 myLL.insert(11, 1)
-myLL.print_list_nodes()
+myLL.print_all_nodes()
