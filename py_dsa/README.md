@@ -1,4 +1,6 @@
-# Python Data Structures & Algorithms + LeetCode
+# [Data Structures, Algorithms and LeetCode with Python](https://www.udemy.com/course/data-structures-algorithms-python/)
+
+DSA for Cracking the Coding Interview. Animated Examples for Faster Learning and Deeper Understanding.
 
 ## Description
 
@@ -26,4 +28,3 @@ Welcome to Data Structures & Algorithms in Python. This course makes learning to
   - Searching
   - Breadth First Search
   - Depth First Search
-
