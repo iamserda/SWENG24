@@ -10,3 +10,6 @@
 .trunk
 .vscode
 */-template
+*/-template/*
+leetcode/-template/*
+leetcode/-template
