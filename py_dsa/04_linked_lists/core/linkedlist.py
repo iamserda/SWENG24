@@ -88,8 +88,7 @@ class LinkedList:
                 temp = temp.next
                 self.tail.next = None
                 break
-
-        self.length = - 1
+        self.length -= 1
         return temp
 
     def pop_first(self):
@@ -97,11 +96,36 @@ class LinkedList:
         if self.length == 0:
             return None
         temp = self.head
-        self.head = None
+        self.head = temp
         if temp == self.tail:
             self.tail = None
-        self.length = - 1
+        self.length -= 1
         return temp
+
+    def get(self, index):
+        """Returns the Node at a given index"""
+        if index < 0 or index >= self.length:
+            return None
+        i = 0
+        temp = self.head
+        while temp:
+            if i == index:
+                return temp
+            else:
+                temp = temp.next
+                i += 1
+        return None
+
+    def set(self, index, value):
+        """Updates the value of a Node at a given valid index."""
+        node = self.get(index)
+        if node:
+            node.value = value
+            return node
+        else:
+            return None
+    # def remove(self, index)
+    # def reverse(self)
 
 
 
@@ -118,3 +142,10 @@ print(myLL.pop().value)
 myLL.print_all_nodes()
 myLL.pop_first()
 myLL.print_all_nodes()
+print(myLL.get(0).value)
+print(myLL.get(-10))
+print(myLL.get(10))
+print(myLL.set(0, 23).value)
+myLL.print_all_nodes()
+print(myLL.set(-10, 20))
+print(myLL.set(10, 23))
