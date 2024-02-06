@@ -44,7 +44,7 @@ class LinkedList:
         If index is higher than the length, IndexError is raised."""
 
         if index >= self.length or index < 0:
-            raise IndexError("Index provided is out of range.")
+            return None
         if index == 0:
             return self.prepend(value)
         new_node = Node(value)
@@ -124,6 +124,20 @@ class LinkedList:
             return node
         else:
             return None
+
+    def insert2(self, index, value):
+        """ Creates a new node, and inserts it at a desired index. If index is higher than the length, IndexError is raised."""
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        node = self.get(index - 1)
+        if node:
+            new_node = Node(value)
+            new_node.next = node.next
+            node.next = new_node
+            self.length += 1
+            return self.head
     # def remove(self, index)
     # def reverse(self)
 
