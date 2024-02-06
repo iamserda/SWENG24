@@ -1,3 +1,5 @@
+# Anagram Solution Explained
+
 ## Intuition
 
 To determine if two strings, `s` and `t`, are anagrams of each other, the strategy is to count the occurrences of each character in both strings. If both strings have the same characters with the exact same number of occurrences for each character, they are anagrams.
