@@ -60,13 +60,49 @@ class LinkedList:
         return self.head
 
     def print_all_nodes(self):
-        """Prints all the node"""
+        """Prints a list representation of all the nodes."""
         if not self.head:
             return
         my_ptr = self.head
+        my_arr = []
         while my_ptr:
-            print(my_ptr.value)
+            my_arr.append(my_ptr.value)
             my_ptr = my_ptr.next
+        print(my_arr)
+
+    def pop(self):
+        """method: pop: removes the last Node from the Linked-List and returns it to the caller. Returns None when there are no Nodes."""
+        temp = self.head
+
+        if not self.length:
+            return None
+
+        if self.head == self.tail:
+            self.head = None
+            self.tail = self.head
+
+        while temp.next != self.tail:
+            temp = temp.next
+            if temp.next == self.tail:
+                self.tail = temp
+                temp = temp.next
+                self.tail.next = None
+                break
+
+        self.length = - 1
+        return temp
+
+    def pop_first(self):
+        """method: pop: removes the last Node from the Linked-List and returns it to the caller. Returns None when there are no Nodes."""
+        if self.length == 0:
+            return None
+        temp = self.head
+        self.head = None
+        if temp == self.tail:
+            self.tail = None
+        self.length = - 1
+        return temp
+
 
 
 # Tests Arena
@@ -77,4 +113,8 @@ myLL.print_all_nodes()
 myLL.prepend(10)
 myLL.print_all_nodes()
 myLL.insert(11, 1)
+myLL.print_all_nodes()
+print(myLL.pop().value)
+myLL.print_all_nodes()
+myLL.pop_first()
 myLL.print_all_nodes()
