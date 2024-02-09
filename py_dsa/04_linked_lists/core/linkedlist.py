@@ -40,9 +40,7 @@ class LinkedList:
         return self.head
 
     def insert(self, value, index):
-        """ Creates a new node, and inserts it at a desired index.
-        If index is higher than the length, IndexError is raised."""
-
+        """ Creates a new node, and inserts it at a desired index."""
         if index >= self.length or index < 0:
             return None
         if index == 0:
@@ -60,7 +58,7 @@ class LinkedList:
         return self.head
 
     def pop(self):
-        """method: pop: removes the last Node from the Linked-List and returns it to the caller. Returns None when there are no Nodes."""
+        """Removes the last Node from the Linked-List and returns it. Returns None if there aren't any Nodes in LinkedList."""
         temp = self.head
         if not self.length:
             return None
@@ -112,7 +110,7 @@ class LinkedList:
             return None
 
     def insert2(self, index, value):
-        """ Creates a new node, and inserts it at a desired index. If index is higher than the length, IndexError is raised."""
+        """ Creates a new node, and inserts it at a desired index."""
         if index == 0:
             return self.prepend(value)
         if index == self.length:
@@ -166,7 +164,7 @@ class LinkedList:
             left_ptr = temp_ptr
             temp_ptr = right_ptr
 
-    def reverse(self, start_index: int, end_index: int) -> None:
+    def reorder(self, start_index: int, end_index: int) -> None:
         """Given two indices, """
         if start_index >= self.length and end_index >= self.length:
             return None
@@ -221,13 +219,12 @@ myLL.reverse_all()  # [3, 23, 10, 32, 24]
 myLL.append(myLL.pop_first().value)  # [23, 10, 32, 24, 3]
 myLL.insert(6, 1)  # [23, 6, 10, 32, 24, 3]
 myLL.print_all_nodes()
-myLL.reverse(0, 5)  # [3, 24, 32, 10, 6, 23]
+myLL.reorder(0, 5)  # [3, 24, 32, 10, 6, 23]
 myLL.print_all_nodes()
-myLL.reverse(1, 5)  # [3, 23, 6, 10, 32, 24]
+myLL.reorder(1, 5)  # [3, 23, 6, 10, 32, 24]
 myLL.print_all_nodes()
-myLL.reverse(10, 50)  # NOCHANGE
+myLL.reorder(10, 50)  # NOCHANGE
 myLL.print_all_nodes()
-myLL.reverse(-1, -5)  # NOCHANGE
+myLL.reorder(-1, -5)  # NOCHANGE
 myLL.print_all_nodes()
-myLL.reverse(4, 1)  # NOCHANGE
-myLL.print_all_nodes()
+myLL.reorder(4, 1)  # NOCHANGE
