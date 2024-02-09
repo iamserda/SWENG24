@@ -67,13 +67,13 @@ class LinkedList:
         if self.head == self.tail:
             self.head = None
             self.tail = self.head
-        while temp.next != self.tail:
-            temp = temp.next
+        while temp.next:
             if temp.next == self.tail:
                 self.tail = temp
                 temp = temp.next
                 self.tail.next = None
                 break
+            temp = temp.next
         self.length -= 1
         return temp
 
@@ -205,8 +205,6 @@ myLL.remove(11)  # NOCHANGE [10,11,12,13]
 myLL.pop()  # [10,12] returns 13
 myLL.pop_first()  # [12] returns 10
 node = myLL.get(0)  # [12]
-if node:
-    print(node.value)  # 12
 myLL.print_all_nodes()
 print(myLL.get(-10))  # None
 print(myLL.get(10))  # None
