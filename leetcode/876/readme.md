@@ -1,4 +1,4 @@
-# [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/post-solution/?submissionId=1170449976)
+# [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/description)
 
 **Difficulty:** Easy
 
@@ -41,7 +41,7 @@ A straightforward way to solve this problem is by using the "Tortoise and Hare" 
 
 ## Credit, Source, Etc
 
-- Source: [LeetCode](https://leetcode.com/problems/merge-sorted-array/description/)
+- Source: [LeetCode](https://leetcode.com/problems/middle-of-the-linked-list/description)
 - [github:  @iamserda](https://github.com/iamserda)
 - [twitter: @iamserda](https://twitter.com/iamserda)
 - [linkedin:    @iamserda](https://linkedin.com/in/iamserda)

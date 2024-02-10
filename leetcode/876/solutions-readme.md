@@ -1,4 +1,4 @@
-#
+# [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/post-solution/?submissionId=1170449976)
 
 ## Intuition
 
@@ -44,7 +44,7 @@ class Solution(object):
 
 ### Credit, Source, Etc
 
-- Source: [LeetCode](https://leetcode.com/problems/merge-sorted-array/description/)
+- Source: [LeetCode](https://leetcode.com/problems/middle-of-the-linked-list/description)
 - [github:  @iamserda](https://github.com/iamserda)
 - [twitter: @iamserda](https://twitter.com/iamserda)
 - [linkedin:    @iamserda](https://linkedin.com/in/iamserda)
