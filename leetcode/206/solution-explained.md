@@ -48,8 +48,8 @@ class Solution:
 ### Credit, Source, Etc
 
 - Source: [LeetCode 206: Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/description/)
-- [github:  @iamserda](https://github.com/iamserda)
+- [github: @iamserda](https://github.com/iamserda)
 - [twitter: @iamserda](https://twitter.com/iamserda)
-- [linkedin:    @iamserda](https://linkedin.com/in/iamserda)
+- [linkedin: @iamserda](https://linkedin.com/in/iamserda)
 
 Made with 🤍🫶🏿 in N🗽C by [@iamserda](https://www.twitter.com/iamserda)

@@ -1,6 +1,6 @@
 # 287: Solution with step-by-step explanation by Marlen09
 
-# Intuition
+## Intuition
 
 **Approach**:
 The problem can be treated as a linked list cycle detection problem.
@@ -10,8 +10,6 @@ Since there is only one duplicate number, the array can be treated as a linked l
 
 - Time complexity: `O(n) 83.46%`
 - Space complexity: `O(1) 88.35%`
-
-# Code
 
 ```python
 class Solution:
