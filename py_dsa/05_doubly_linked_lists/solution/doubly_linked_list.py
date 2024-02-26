@@ -72,6 +72,27 @@ class DoublyLinkedList:
 
     def get(self, index):
         """Given an index value, returns the Node at that given index."""
-        if not self.head or self.length == 0 or index > self.length:
+        if not self.head or index >= self.length or index < 0:
             return None
-        
+        if index >= self.length // 2:
+            i = self.length - 1
+            temp = self.tail
+            while temp:
+                if i == index:
+                    return temp
+                i -= 1
+                temp = temp.prev
+        else:
+            i = 0
+            temp = self.head
+            while temp:
+                if i == index:
+                    return temp
+                i += 1
+                temp = temp.next
+
+    def set_value(self, index, value):
+        node = self.get(index)
+        if node:
+            node.value = value
+        return node
