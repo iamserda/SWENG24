@@ -58,7 +58,8 @@ class LinkedList:
         return self.head
 
     def pop(self):
-        """Removes the last Node from the Linked-List and returns it. Returns None if there aren't any Nodes in LinkedList."""
+        """Removes the last Node from the Linked-List and returns it. 
+        Returns None if there aren't any Nodes in LinkedList."""
         temp = self.head
         if not self.length:
             return None
@@ -76,7 +77,8 @@ class LinkedList:
         return temp
 
     def pop_first(self):
-        """method: pop: removes the last Node from the Linked-List and returns it to the caller. Returns None when there are no Nodes."""
+        """method: pop: removes the last Node from the Linked-List and 
+        returns it to the caller. Returns None when there are no Nodes."""
         if self.length == 0:
             return None
         temp = self.head
