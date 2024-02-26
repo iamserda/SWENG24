@@ -92,7 +92,26 @@ class DoublyLinkedList:
                 temp = temp.next
 
     def set_value(self, index, value):
+        """Given an index value, updates the value of the Node at that given index."""
         node = self.get(index)
         if node:
             node.value = value
         return node
+
+    def insert(self, index, value):
+        """Given an index value, inserts a new Node at that index."""
+        if index < 0 or index > self.length:
+            print("IndexError: Invalid index. Index of range bound.")
+            return False
+        if index == 0:
+            return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        prev_node = self.get(index - 1)
+        new_node = Node(value)
+        new_node.next = prev_node.next
+        prev_node.next.prev = new_node
+        prev_node.next = new_node
+        new_node.prev = prev_node
+        self.length += 1
+        return self.head
