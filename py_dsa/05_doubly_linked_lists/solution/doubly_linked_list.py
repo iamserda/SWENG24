@@ -145,27 +145,53 @@ class DoublyLinkedList:
         self.length -= 1
         return temp
 
+    def swap_first_last_nodes(self):
+        if not self.head:
+            return None
+        
+        if self.head == self.tail:
+            return self
+        
+        new_tail = self.pop_first()
+        new_head = self.pop()
+        new_head.next = self.head
+        self.head.prev = new_head
+        self.head = new_head
+        self.length += 1
+        
+        self.tail.next = new_tail
+        new_tail.prev = self.tail
+        self.tail = new_tail
+        self.length += 1
+        return self
 
+    def swap_first_last_values(self):
+        if not self.head:
+            return None
+        
+        if self.head == self.tail:
+            return self
+        self.head.value, self.tail.value = self.tail.value, self.head.value
+        return self
+
+# TESTING ARENAS:
 my_doubly_linked_list = DoublyLinkedList(1)
 my_doubly_linked_list.append(2)
 my_doubly_linked_list.append(3)
 my_doubly_linked_list.append(4)
 my_doubly_linked_list.append(5)
-
-print('DLL before remove():')
 my_doubly_linked_list.print_list()
 
-print('\nRemoved node:')
-print(my_doubly_linked_list.remove(2).value)
-print('DLL after remove() in middle:')
+print("head:memloc:",id(my_doubly_linked_list.head))
+print("tail:memloc:",id(my_doubly_linked_list.tail))
+my_doubly_linked_list.swap_first_last_nodes()
 my_doubly_linked_list.print_list()
+print("head:memloc:",id(my_doubly_linked_list.head))
+print("tail:memloc:",id(my_doubly_linked_list.tail))
 
-print('\nRemoved node:')
-print(my_doubly_linked_list.remove(0).value)
-print('DLL after remove() of first node:')
-my_doubly_linked_list.print_list()
-
-print('\nRemoved node:')
-print(my_doubly_linked_list.remove(2).value)
-print('DLL after remove() of last node:')
+print("head:memloc:",id(my_doubly_linked_list.head))
+print("tail:memloc:",id(my_doubly_linked_list.tail))
+my_doubly_linked_list.swap_first_last_values()
+print("tail:memloc:",id(my_doubly_linked_list.head))
+print("tail:memloc:",id(my_doubly_linked_list.tail))
 my_doubly_linked_list.print_list()
