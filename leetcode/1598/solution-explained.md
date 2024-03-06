@@ -45,8 +45,6 @@ class Solution:
 
 Crafted with attention to clarity and efficiency, this solution aims to offer a practical understanding of how to apply stack data structures to solve problems related to path navigation and operation sequencing.
 
-### Credit, Source, Etc
-
 - Source: [LeetCode](https://leetcode.com/problems/crawler-log-folder/description)
 - [github: @iamserda](https://github.com/iamserda)
 - [twitter: @iamserda](https://twitter.com/iamserda)
