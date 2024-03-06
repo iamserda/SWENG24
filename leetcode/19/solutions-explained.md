@@ -1,40 +1,57 @@
-# [Two Sum](https://leetcode.com/problems/two-sum/)
+# Remove Nth Node From End of List
 
 ## Intuition
-When first approaching the "Two Sum" problem, it's clear that the challenge lies in efficiently finding two numbers in an array that add up to a specific target. The straightforward solution of checking every pair is too slow, so there's a need for a method that can find the solution in a single pass through the array.
+Faced with the challenge of removing the nth node from the end of a singly linked list, the direct approach of calculating the total length of the list, then iterating again to the correct position for removal, seems inefficient. Instead, a two-pointer strategy promises a more efficient solution by potentially traversing the list only once.
 
 ## Approach
-The solution utilizes a hash table to store the indices of the numbers as they're iterated over. For each number, it calculates its complement by subtracting the number from the target. It then checks if this complement is already in the hash table:
-- If it is, it means a previously visited number is the required pair to reach the target, and the function returns the indices of these two numbers.
-- If not, the current number's value and its index are stored in the hash table for potential future matches.
-
-This method allows us to find the two numbers in a single pass through the array, significantly speeding up the process.
+The `Solution` class implements the `removeNthFromEnd` method with a two-pointer technique involving `fast` and `slow` pointers:
+- Both `fast` and `slow` pointers start at the head of the list.
+- The `fast` pointer advances `n` steps ahead to create a gap between `fast` and `slow`.
+- Then, both pointers move forward in tandem until `fast` reaches the end of the list. At this point, `slow` is exactly `n` nodes away from the end.
+- Special cases are handled:
+  - If the list is empty (`head` is `None`), it simply returns `head`.
+  - If `n` equals the length of the list, indicating the need to remove the first node, it updates `head` to `head.next` and returns the updated list.
+- Finally, `slow.next` is set to `slow.next.next`, effectively skipping over the nth node from the end, which removes it from the list.
 
 ## Complexity
-- Time complexity: $$O(n)$$
-
-  The algorithm passes through the list only once. Hash table insertion and lookup have an average time complexity of $$O(1)$$, so the overall time complexity is linear with respect to the array's length.
-
-- Space complexity: $$O(n)$$
-
-  In the worst case, the extra space required depends on the number of items stored in the hash table, which stores up to `n - 1` elements where `n` is the number of elements in the input array.
+- **Time Complexity**: $$O(L)$$, where $$L$$ is the length of the linked list. The algorithm makes a maximum of two passes through the list: one to set the `fast` pointer `n` steps ahead and another to move both `fast` and `slow` to their final positions.
+- **Space Complexity**: $$O(1)$$, as it uses a fixed amount of space regardless of the input list size.
 
 ## Code
 ```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
 class Solution:
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        complements = {}
-        for index, value in enumerate(nums):
-            complement = target - value
-            if complement in complements:
-                return [complements[complement], index]
-            complements[value] = index
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        fast = head
+        slow = head
+
+        if head is None:
+            return head
+
+        for i in range(n):
+            fast = fast.next
+
+        if fast is None:
+            return head.next
+
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+
+        slow.next = slow.next.next
+        return head
 ```
+
+### Credit, Source, Etc
+- This solution provides a practical application of the two-pointer technique, demonstrating its utility in efficiently solving problems that would otherwise require knowing the total length of a linked list.
+- Tailored for use cases where direct access to list elements is not possible, emphasizing the value of pointer manipulation in linked list operations.
+
+Designed to be efficient and straightforward, this method underscores the importance of algorithm optimization in data structure manipulation, particularly when working with constraints typical of linked lists.
 
 ### Credit, Source, Etc
 

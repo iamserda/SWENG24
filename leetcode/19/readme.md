@@ -1,13 +1,8 @@
 # [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)
 
-## Difficulty
+**Difficulty:** Medium
 
-Medium
-
-## Topics
-
-- Linked List
-- Two Pointers
+**Topic:** Linked List, Fast-Slow-Pointers
 
 ## Companies
 
