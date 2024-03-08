@@ -1,5 +1,8 @@
 
 def mergeAlternately(word1: str, word2: str) -> str:
+    """Given two strings, return a string that's made
+    of the chars from string1 and string where characters alternate
+    between string1 and string2. ex: "abc" and "xyz" => "axbycz". """
     count = len(word1) if len(word1) >= len(word2) else len(word2)
     word3 = ""
     for i in range(count):
