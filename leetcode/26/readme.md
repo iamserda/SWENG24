@@ -8,10 +8,6 @@
 
 A common interview question for companies focusing on algorithms and data structures, such as Google, Facebook, Amazon, and Microsoft.
 
-## Hint
-
-Use a two-pointer technique to process elements in one pass. Keep one pointer for iterating through the array and another for the next unique element's position.
-
 ## Description
 
 Given an integer array `nums` sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in `nums`.
@@ -45,6 +41,10 @@ The judge will test your solution with specific code that checks if your functio
 - `1 <= nums.length <= 3 * 10^4`
 - `-100 <= nums[i] <= 100`
 - `nums` is sorted in non-decreasing order.
+
+## Hint
+
+Use a two-pointer technique to process elements in one pass. Keep one pointer for iterating through the array and another for the next unique element's position.
 
 ## Approach
 
