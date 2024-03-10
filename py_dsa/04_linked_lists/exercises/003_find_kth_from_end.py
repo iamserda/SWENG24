@@ -21,6 +21,7 @@ class LinkedList:
         return True
 
     def find_kth_from_end(self, k):
+        """Returns the node a Kth position from the tail-end of the Linked-List."""
         fast = self.head
         slow = self.head
 
