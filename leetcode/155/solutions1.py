@@ -1,5 +1,6 @@
 """
 This solution solves this problem with O(1) time, O(n) space.
+Hint: We save(and remove) all newly found(popped) min values.
 """
 class MinStack:
 

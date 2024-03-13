@@ -1,5 +1,7 @@
 """
 This solution solves this problem with O(1) time, O(n) space.
+Hint: In this solution, we create a matrix, where each row contains two values
+The top of the stack and the current minimum value.
 """
 
 
