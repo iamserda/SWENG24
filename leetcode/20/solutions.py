@@ -1,5 +1,9 @@
 
 def isValid(a_string: str) -> bool:
+    """
+    Given a string, return True if the parentheses, brackets 
+    and curly-braces are in valid order.
+    """
     closers = {
         ")": "(",
         "]":"[" ,
