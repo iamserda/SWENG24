@@ -16,9 +16,19 @@ class DoublyLinkedList:
 
     def print_list(self):
         temp = self.head
+        nodes_arr = []
         while temp is not None:
-            print(temp.value)
+            nodes_arr.append(temp.value)
             temp = temp.next
+        print(nodes_arr)
+
+    def to_list(self):
+        current = self.head
+        nodes_arr = []
+        while current is not None:
+            nodes_arr.append(current.value)
+            current = current.next
+        return nodes_arr
 
     def prepend(self, value=None):
         """Adds a new Node to the beginning of the Doubly-LinkedList."""
@@ -148,17 +158,19 @@ class DoublyLinkedList:
     def swap_first_last_nodes(self):
         if not self.head:
             return None
-        
         if self.head == self.tail:
             return self
         
         new_tail = self.pop_first()
         new_head = self.pop()
-        new_head.next = self.head
-        self.head.prev = new_head
-        self.head = new_head
-        self.length += 1
-        
+        if not self.head:
+            self.head = self.tail = new_head
+            self.length = 1
+        else:
+            new_head.next = self.head
+            self.head.prev = new_head
+            self.head = new_head
+            self.length += 1
         self.tail.next = new_tail
         new_tail.prev = self.tail
         self.tail = new_tail
@@ -175,30 +187,64 @@ class DoublyLinkedList:
         return self
 
 # TESTING ARENAS:
-my_doubly_linked_list = DoublyLinkedList(1)
-my_doubly_linked_list.append(2)
-my_doubly_linked_list.append(3)
-my_doubly_linked_list.append(4)
-my_doubly_linked_list.append(5)
+doubly = DoublyLinkedList(1) # (1)-> None
+assert doubly.to_list() == [1]
+
+doubly.append(2)
+assert doubly.to_list() == [1, 2]
+
+doubly.prepend(3)
+assert doubly.to_list() == [3,1,2]
+
+doubly.insert(1, 4)
+assert doubly.to_list() == [3,4,1,2]
+
+doubly.insert(-1, -1)
+assert doubly.to_list() == [3,4,1,2]
+
+doubly.insert(5, -1)
+assert doubly.to_list() == [3,4,1,2]
+
+doubly.append(5)
+assert doubly.to_list() == [3,4,1,2,5]
+
+doubly.pop()
+assert doubly.to_list() == [3,4,1,2]
+
+doubly.pop_first()
+assert doubly.to_list() == [4,1,2]
+
+assert doubly.get(0).value == 4
+assert doubly.get(-1) == None
+assert doubly.get(4) == None
+
+doubly.set_value(0, 20)
+assert doubly.to_list() == [20,1,2]
+doubly.set_value(-1, 20)
+assert doubly.to_list() == [20,1,2]
+doubly.set_value(3, 20)
+assert doubly.to_list() == [20,1,2]
+
+doubly.remove(1)
+assert doubly.to_list() == [20,2]
 
 print("PRE NODE-SWAP")
-my_doubly_linked_list.swap_first_last_nodes()
-print("head:memloc:",id(my_doubly_linked_list.head))
-print("tail:memloc:",id(my_doubly_linked_list.tail))
+doubly.print_list()
+print("head:memloc:",id(doubly.head))
+print("tail:memloc:",id(doubly.tail))
 
 print("POST NODE-SWAP")
-my_doubly_linked_list.swap_first_last_nodes()
-my_doubly_linked_list.print_list()
-print("head:memloc:",id(my_doubly_linked_list.head))
-print("tail:memloc:",id(my_doubly_linked_list.tail))
+doubly.swap_first_last_nodes()
+print("head:memloc:",id(doubly.head))
+print("tail:memloc:",id(doubly.tail))
 
 print("PRE VALUE-SWAP")
-my_doubly_linked_list.swap_first_last_values()
-print("head:memloc:",id(my_doubly_linked_list.head))
-print("tail:memloc:",id(my_doubly_linked_list.tail))
+doubly.print_list()
+print("head:memloc:",id(doubly.head))
+print("tail:memloc:",id(doubly.tail))
 
 print("POST VALUE-SWAP")
-my_doubly_linked_list.swap_first_last_values()
-print("tail:memloc:",id(my_doubly_linked_list.head))
-print("tail:memloc:",id(my_doubly_linked_list.tail))
-my_doubly_linked_list.print_list()
+doubly.swap_first_last_values()
+print("tail:memloc:",id(doubly.head))
+print("tail:memloc:",id(doubly.tail))
+doubly.print_list()
