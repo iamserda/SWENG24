@@ -1,60 +1,67 @@
-# [88. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/description/)
+# [151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/description/)
 
-## Topics
+**Difficulty:** Medium
 
-- Array
-- Two Pointers
-- Sorting
-
-## Companies
-
-This problem is commonly asked in technical interviews for companies like Amazon, Google, Facebook, and Microsoft.
-
-## Hint
-
-Consider using two pointers to fill the array from the end to the beginning. This way, you don't need to shift the elements of `nums1` to accommodate `nums2`.
+**Topics:** String, Two-Pointers
 
 ## Description
 
-Given two sorted integer arrays `nums1` and `nums2`, and two integers `m` and `n` representing the number of elements in `nums1` and `nums2` respectively, your task is to merge `nums1` and `nums2` into a single array sorted in non-decreasing order.
+Given an input string `s`, reverse the order of the words.
 
-The final sorted array should not be returned by the function but instead be stored inside the array `nums1`. `nums1` has a length of `m + n`, where the first `m` elements denote the elements that should be merged, and the last `n` elements are set to 0 and should be ignored. `nums2` has a length of `n`.
+A word is defined as a sequence of non-space characters. The words in `s` will be separated by at least one space. The input string may also contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces. You need to reduce multiple spaces between two words to a single space in the reversed string.
+
+### Note
+
+- A word is defined as a sequence of non-space characters.
+- Input string may contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces.
+- You need to reduce multiple spaces between two words to a single space in the reversed string.
 
 ### Examples
 
 **Example 1:**
 
-- Input: `nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3`
-- Output: `[1,2,2,3,5,6]`
-- Explanation: The arrays we are merging are `[1,2,3]` and `[2,5,6]`. The result of the merge is `[1,2,2,3,5,6]`.
+```plaintext
+Input: s = "the sky is blue"
+Output: "blue is sky the"
+```
 
 **Example 2:**
 
-- Input: `nums1 = [1], m = 1, nums2 = [], n = 0`
-- Output: `[1]`
-- Explanation: The arrays we are merging are `[1]` and `[]`. The result of the merge is `[1]`.
+```plaintext
+Input: s = "  hello world  "
+Output: "world hello"
+Explanation: Your reversed string should not contain leading or trailing spaces.
+```
 
 **Example 3:**
 
-- Input: `nums1 = [0], m = 0, nums2 = [1], n = 1`
-- Output: `[1]`
-- Explanation: The arrays we are merging are `[]` and `[1]`. The result of the merge is `[1]`.
+```plaintext
+Input: s = "a good   example"
+Output: "example good a"
+Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
+```
 
 ### Constraints
 
-- `nums1.length == m + n`
-- `nums2.length == n`
-- `0 <= m, n <= 200`
-- `1 <= m + n <= 200`
-- `-10^9 <= nums1[i], nums2[j] <= 10^9`
+- `1 <= s.length <= 10^4`
+- `s` contains English letters (upper-case and lower-case), digits, and spaces `' '`.
+- There is at least one word in `s`.
 
-### Follow-up
+## Approach
 
-Can you come up with an algorithm that runs in O(m + n) time?
+To solve this problem, consider the following steps:
+
+1. **Trim and Split**: Trim leading and trailing spaces, and then split the string by spaces into words. Note that splitting by spaces should treat multiple spaces as a single delimiter to avoid empty words in the result.
+
+2. **Reverse the Words**: Reverse the order of words obtained from the split operation.
+
+3. **Join the Words**: Join the reversed words with a single space between them to form the final string.
+
+An alternative approach involves two pointers to reverse each word in place and then reverse the entire string to achieve the correct word order without leading or trailing spaces and with only single spaces between words.
 
 ### Credit, Source, Etc
 
-- Source: [LeetCode](https://leetcode.com/problems/merge-sorted-array/description/)
+- Source: [LeetCode](https://leetcode.com/problems/reverse-words-in-a-string/description/)
 - [github:  @iamserda](https://github.com/iamserda)
 - [twitter: @iamserda](https://twitter.com/iamserda)
 - [linkedin:    @iamserda](https://linkedin.com/in/iamserda)
