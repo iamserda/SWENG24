@@ -42,22 +42,24 @@ class LinkedList:
     def insert_at_end(self, value):
         new_node = ListNode(value)
         if not self.head:
-            self.head = new_node
-            return
-        last = self.head
-        while last.next:
-            last = last.next
-        last.next = new_node
+            self.head = self.tail = new_node
+            self.length = 1
+        self.tail.next = new_node
+        new_node.prev = self.tail
+        self.tail = self.tail.next
+        self.length += 1
 
-    def delete_node(self, key):
-        temp = self.head
-        if temp is not None:
-            if temp.value == key:
-                self.head = temp.next
-                temp = None
-                return
-        while temp is not None:
-            if temp.value == key:
+    def delete_node(self, index):
+        if index == 0:
+            temp = self.head
+            self.head = self.head.next
+            
+        temp = Node(0)
+        temp.next = self.head
+
+
+        while temp.next is not None:
+            if temp.next.value == key:
                 break
             prev = temp
             temp = temp.next
