@@ -2,23 +2,15 @@ class MyQueue:
     def __init__(self):
         self.stack1 = []
         self.stack2 = []
-
+    
     def enqueue(self, value):
-        if not self.stack1:
-            self.stack1.append(value)
-        else:
-            for _ in range(len(self.stack1)):
-                self.stack2.append(self.stack1.pop())
-            self.stack1.append(value)
-            for _ in range(len(self.stack2)):
-                self.stack1.append(self.stack2.pop())
+        """Start Here"""
 
     def peek(self):
         return self.stack1[-1]
 
     def is_empty(self):
         return len(self.stack1) == 0
-
 
 
 # Create a new queue
