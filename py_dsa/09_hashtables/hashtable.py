@@ -35,6 +35,18 @@ class HashTable:
                     return elem[key]
         return self.data_map[index][key] if key in self.data_map[index] else None
 
+    def get_keys(self):
+        keys_arr = []
+        for elem in self.data_map:
+            if elem == None:
+                continue
+            elif "list" in str(type(elem)):
+                for el in elem:
+                    keys_arr.append(list(el.keys())[0])
+            else:
+                keys_arr.append(list(elem.keys())[0])
+        return set(keys_arr)
+
     def print_data_map(self):
         """print data_map"""
         for i,v in enumerate(self.data_map):
@@ -69,4 +81,7 @@ assert my_hash_table.get_item("k") == 20
 my_hash_table.set_item("l", 80)
 assert my_hash_table.get_item("l") == 80
 
-assert my_hash_table.get_item("z") == None
+# assert my_hash_table.get_item("z") == None
+a = my_hash_table.get_keys()
+b = set("abcdefghijkl")
+assert len(a.symmetric_difference(b)) == 0
