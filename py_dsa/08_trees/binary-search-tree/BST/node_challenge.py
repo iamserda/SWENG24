@@ -1,0 +1,1 @@
+"""A node for a binary-tree"""

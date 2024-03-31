@@ -5,16 +5,19 @@
 Binary Search Trees (BST) are a particular type of binary tree that facilitates efficient searching, insertion, and deletion operations. In a BST, for every node, all elements in the left subtree are less than the node, and all elements in the right subtree are greater. This property allows for operations to proceed in a direction that halves the search space at each step, analogous to binary search in an array, providing efficient performance characteristics.
 
 ##### Key Operations
+
 - **Search**: O(log n) on average, O(n) in the worst case (unbalanced tree)
 - **Insertion**: O(log n) on average, O(n) in the worst case
 - **Deletion**: O(log n) on average, O(n) in the worst case
 - **Traversal**: In-order traversal of a BST will yield elements in sorted order.
 
 ##### Use Cases
+
 - Implementing look-up tables that need to be frequently searched, inserted into, or deleted from.
 - Managing sorted data for quick retrieval and manipulation.
 
 ##### Python Implementation
+
 ```python
 class TreeNode:
     def __init__(self, value):
@@ -67,6 +70,7 @@ else:
 ```
 
 #### Further Steps
+
 - Implement delete functionality in the BST, considering cases where the node to be deleted has no children, one child, or two children.
 - Explore self-balancing binary search trees like AVL trees and Red-Black trees to maintain efficient operation times even in the worst case.
 

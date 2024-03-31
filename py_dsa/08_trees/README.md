@@ -5,16 +5,19 @@
 Trees are a hierarchical data structure consisting of nodes, where each node contains a value and a list of references to other nodes (the "children"). The first node of the tree is called the root, and nodes with no children are called leaves. Trees are used to represent hierarchical relationships and are fundamental in algorithms involving hierarchical data, database systems, and more.
 
 ### Key Operations
+
 - **Insertion**: Varies based on the type of tree.
 - **Deletion**: Varies based on the type of tree.
 - **Traversal**: In-order, Pre-order, Post-order, Level-order (BFS).
 
 ### Use Cases
+
 - Representing hierarchical data (e.g., file systems).
 - Implementing search trees (e.g., Binary Search Trees, AVL Trees) for efficient search, insertion, and deletion operations.
 - Storing data in a hierarchical structure to facilitate operations like prefix matching used in trie data structures.
 
 ### Python Implementation (Binary Tree)
+
 Here's a simple implementation of a binary tree, where each node has at most two children:
 
 ```python

@@ -1,4 +1,5 @@
-from Node import Node
+from node_solution import Node
+
 
 class BinarySearchTree:
     def __init__(self):
@@ -14,7 +15,8 @@ class BinarySearchTree:
         temp = self.root
         while temp:
             if new_node.value == temp.value:
-                raise ValueError("DuplicateNodeError: A node with this value already exist!")
+                raise ValueError(
+                    "DuplicateNodeError: A node with this value already exist!")
 
             if new_node.value > temp.value:
                 if not temp.right:
@@ -41,11 +43,13 @@ class BinarySearchTree:
                 temp = temp.right
             else:
                 temp = temp.left
-        return False # Value was not found!
+        return False  # Value was not found!
+
 
 # TESTING ARENAS:
 my_bst = BinarySearchTree()
-arr = [20,10,30,5,15,25,35,2,8,12,18,22,26,33,40,1,3,11,13,17,19,21,23,24,28,31,39,38,41]
+arr = [20, 10, 30, 5, 15, 25, 35, 2, 8, 12, 18, 22, 26, 33,
+       40, 1, 3, 11, 13, 17, 19, 21, 23, 24, 28, 31, 39, 38, 41]
 for ar in arr:
     my_bst.insert(ar)
 
