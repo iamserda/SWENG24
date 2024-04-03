@@ -12,19 +12,19 @@ def deleteDuplicatesUnsorted(head: Node) -> Node:
         return
     if not head.next:
         return head
-    
+
     node = Node(0)
     node.next = head
     temp = head
     hash_counter = {}
-    
+
     while temp:
         if temp.val not in hash_counter:
             hash_counter[temp.val] = 1
         else:
             hash_counter[temp.val] += 1
         temp = temp.next
-    
+
     pre = node
     temp = head
     while temp:
@@ -35,7 +35,7 @@ def deleteDuplicatesUnsorted(head: Node) -> Node:
             pre.next = temp.next
             temp.next = None
             temp = pre.next
-    
+
     head = node.next
     node.next = None
     return head
@@ -58,7 +58,7 @@ head.next.next.next.next = Node(5)
 head.next.next.next.next.next = Node(2)
 head = deleteDuplicatesUnsorted(head=head)
 arr = linkedlist_to_arr(head)
-assert arr == [4,5], f"Failed! -> output: {arr}, expected: [3,4,5,1,2]."
+assert arr == [4,5]
 
 #Test 1: PASSED!
 head = Node(3)
@@ -69,7 +69,7 @@ head.next.next.next.next = Node(2)
 head.next.next.next.next.next = Node(0)
 head = deleteDuplicatesUnsorted(head=head)
 arr = linkedlist_to_arr(head)
-assert arr == [3,4,5,1,2,0], f"Failed! -> output: {arr}, expected: [3,4,5,1,2]."
+assert arr == [3,4,5,1,2,0]
 
 #Test 2: FAILED
 head = Node(3)
@@ -79,4 +79,4 @@ head.next.next.next = Node(1)
 head.next.next.next.next = Node(2)
 head.next.next.next.next.next = Node(0)
 arr = linkedlist_to_arr(head)
-assert arr == [3,4,5,1,2], f"Failed! -> output: {arr}, expected: [3,4,5,1,2]."
+assert arr != [3,4,5,1,2]

@@ -22,15 +22,46 @@ The implementation details are encapsulated within two primary functions:
 
 ```python
 class Node:
+    """Node class with constructor"""
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
 def deleteDuplicatesUnsorted(head: Node) -> Node:
-    # Implementation omitted for brevity
+    """Given the head of a linked list, find all the values that appear more 
+    than once in the list and delete the nodes that have any of those values. 
+    Return the linked list after the deletions."""
+    if not head:
+        return
+    if not head.next:
+        return head
 
-def linkedlist_to_arr(head: Node) -> list:
-    # Implementation omitted for brevity
+    node = Node(0)
+    node.next = head
+    temp = head
+    hash_counter = {}
+
+    while temp:
+        if temp.val not in hash_counter:
+            hash_counter[temp.val] = 1
+        else:
+            hash_counter[temp.val] += 1
+        temp = temp.next
+
+    pre = node
+    temp = head
+    while temp:
+        if hash_counter[temp.val] == 1:
+            pre = temp
+            temp = temp.next
+        else:
+            pre.next = temp.next
+            temp.next = None
+            temp = pre.next
+
+    head = node.next
+    node.next = None
+    return head
 ```
 
 ## Testing
